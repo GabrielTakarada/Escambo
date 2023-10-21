@@ -16,8 +16,12 @@ export const Content = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
+<<<<<<< HEAD
   box-shadow: 4px 4px 3px 8px #0002;
   border: 1px solid black;
+=======
+  box-shadow: 0 1px 2px #0003;
+>>>>>>> d6d11574103e7ac30d2f8d5e2b46b1ae6a23d47a
   background-color: white;
   max-width: 350px;
   padding: 20px;

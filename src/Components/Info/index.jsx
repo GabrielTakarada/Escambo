@@ -1,23 +1,40 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import Botao from "../Botao";
 import { Alert, AlertIcon } from "@chakra-ui/react";
 import { Box } from "@mui/system";
 import { Container, Paper } from "@mui/material";
 
+=======
+import Button from "../Button";
+import { useNavigate } from "react-router-dom";
+>>>>>>> d6d11574103e7ac30d2f8d5e2b46b1ae6a23d47a
 
 const Addcard = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [postDate, setPostDate] = useState("");
   const [location, setLocation] = useState("");
+<<<<<<< HEAD
   const [showMessage, setShowMessage] = useState(false);
 
   const handleAddCard = () => {
     setShowMessage(true);
+=======
+
+  const navigate = useNavigate();
+
+  const handleAddCard = () => {
+    // Aqui você pode enviar os dados do novo card para onde desejar, como um servidor ou um estado global.
+
+    // Navegue de volta para a página principal após a adição do card
+    navigate("/main");
+>>>>>>> d6d11574103e7ac30d2f8d5e2b46b1ae6a23d47a
   };
 
   return (
     <>
+<<<<<<< HEAD
       <Container maxWidth="md">
         <Paper elevation={3}>
           <Box
@@ -95,6 +112,46 @@ const Addcard = () => {
           </Box>
         </Paper>
       </Container>
+=======
+      {/* <C.Container> */}
+      <h2>Adicionar Novo Card</h2>
+      <form>
+        <label htmlFor="name">Nome:</label>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <label htmlFor="description">Descrição:</label>
+        <textarea
+          id="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+
+        <label htmlFor="postDate">Data de Postagem:</label>
+        <input
+          type="date"
+          id="postDate"
+          value={postDate}
+          onChange={(e) => setPostDate(e.target.value)}
+        />
+
+        <label htmlFor="location">Localização:</label>
+        <input
+          type="text"
+          id="location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
+      </form>
+      <Button Text="Adicionar Card" onClick={handleAddCard}>
+        Adicionar Card
+      </Button>
+      {/* </C.Container> */}
+>>>>>>> d6d11574103e7ac30d2f8d5e2b46b1ae6a23d47a
     </>
   );
 };
