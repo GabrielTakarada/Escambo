@@ -24,11 +24,6 @@ const Signin = () => {
       setError(res);
       return;
     }
-<<<<<<< HEAD
-=======
-
-    alert("Aproveite o site de trocas Escambo");
->>>>>>> d6d11574103e7ac30d2f8d5e2b46b1ae6a23d47a
     navigate("/main");
   };
 

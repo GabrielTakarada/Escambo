@@ -20,16 +20,20 @@ function getLabelText(value) {
   return `${value} Star${value !== 1 ? "s" : ""}, ${labels[value]}`;
 }
 
-export default function HoverRating() {
+export default function Star() {
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
 
   return (
     <Box
       sx={{
-        width: 200,
+        width: 230,
         display: "flex",
         alignItems: "center",
+        border: "2px solid rgb(0,0,0,0.6)",
+        boxShadow: "3px 3px 3.3px 3px rgb(0,0,0,0.3)",
+        marginBottom: "3%",
+        backgroundColor: "#FFE4B5",
       }}
     >
       <Rating

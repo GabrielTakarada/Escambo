@@ -1,87 +1,163 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
 import Botao from "../Botao";
 import { Alert, AlertIcon } from "@chakra-ui/react";
 import { Box } from "@mui/system";
 import { Container, Paper } from "@mui/material";
+import Rodape from "../Rodape";
 
-=======
-import Button from "../Button";
-import { useNavigate } from "react-router-dom";
->>>>>>> d6d11574103e7ac30d2f8d5e2b46b1ae6a23d47a
+import Appbar from "../Cabecalho";
 
 const Addcard = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [postDate, setPostDate] = useState("");
   const [location, setLocation] = useState("");
-<<<<<<< HEAD
   const [showMessage, setShowMessage] = useState(false);
+  const [orderInfo1, setOrderInfo1] = useState("");
+  const [orderInfo2, setOrderInfo2] = useState("");
+  const [orderInfo3, setOrderInfo3] = useState("");
 
   const handleAddCard = () => {
     setShowMessage(true);
-=======
-
-  const navigate = useNavigate();
-
-  const handleAddCard = () => {
-    // Aqui você pode enviar os dados do novo card para onde desejar, como um servidor ou um estado global.
-
-    // Navegue de volta para a página principal após a adição do card
-    navigate("/main");
->>>>>>> d6d11574103e7ac30d2f8d5e2b46b1ae6a23d47a
   };
 
   return (
     <>
-<<<<<<< HEAD
+      <Appbar />
       <Container maxWidth="md">
         <Paper elevation={3}>
           <Box
-            marginTop="4%"
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            p={5}
+            marginTop="2%"
+            padding="40px"
             textAlign="center"
-            sx={{ backgroundColor: "#DCDCDC" }}
-            border="solid black"
-            boxShadow="4.3px 3.5px 0px 0px black, 0px 0px 2px 2.5px white"
+            sx={{
+              backgroundColor: "#F5DEB3",
+              border: "2px solid black",
+              boxShadow: "4.3px 3.5px 0px 0px black, 0px 0px 2px 2.5px white",
+            }}
           >
-            {/* <C.Container> */}
-            <h2>Adicionar Produto ou Serviço</h2>
-            <form style={{ padding: "35px" }}>
-              <div style={{ padding: "15px" }}>
+            <h2
+              style={{
+                marginBottom: "40px",
+                fontFamily: "serif",
+                marginTop: "10px",
+              }}
+            >
+              Adicionar Produto | Serviço
+            </h2>
+            <form>
+              <div
+                style={{
+                  marginBottom: "30px",
+                  fontFamily: "Monospace",
+                  fontSize: "16px",
+                  flexDirection: "colum",
+                }}
+              >
                 <label htmlFor="name">Nome:</label>
                 <input
                   type="text"
                   id="name"
                   value={name}
-                  style={{ borderRadius: "5px" }}
+                  style={{
+                    borderRadius: "5px",
+                    width: "32%",
+                    border: "1px solid black",
+                    marginLeft: "5%",
+                    marginRight: "9%",
+                  }}
                   onChange={(e) => setName(e.target.value)}
                 />
-              </div>
-              <div style={{ padding: "15px" }}>
-                <label htmlFor="location">Localização:</label>
+
+                <label htmlFor="location">Contato:</label>
                 <input
                   type="text"
                   id="location"
                   value={location}
-                  style={{ borderRadius: "5px" }}
+                  style={{
+                    borderRadius: "5px",
+                    width: "32%",
+                    border: "1px solid black",
+                    marginLeft: "5%",
+                  }}
                   onChange={(e) => setLocation(e.target.value)}
                 />
               </div>
-              <div style={{ padding: "15px" }}>
+              <div
+                style={{
+                  marginBottom: "30px",
+                  fontFamily: "Monospace",
+                  fontSize: "16px",
+                }}
+              >
                 <label htmlFor="description">Descrição:</label>
                 <textarea
                   id="description"
                   value={description}
-                  style={{ borderRadius: "5px" }}
+                  style={{
+                    borderRadius: "5px",
+                    width: "88%",
+                    resize: "none",
+                    border: "1px solid black",
+                  }}
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
-              <div style={{ padding: "15px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  marginBottom: "35px",
+                  fontFamily: "Monospace",
+                  fontSize: "16px",
+                }}
+              >
+                <div style={{ marginRight: "10px", width: "100%" }}>
+                  <label htmlFor="orderInfo1">Pedidos:</label>
+                  <input
+                    type="text"
+                    id="orderInfo1"
+                    value={orderInfo1}
+                    style={{
+                      borderRadius: "5px",
+                      width: "27%",
+                      border: "1px solid black",
+                      marginLeft: "3%",
+                    }}
+                    onChange={(e) => setOrderInfo1(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    id="orderInfo2"
+                    value={orderInfo2}
+                    style={{
+                      borderRadius: "5px",
+                      width: "27%",
+                      border: "1px solid black",
+                      marginLeft: "3%",
+                    }}
+                    onChange={(e) => setOrderInfo2(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    id="orderInfo3"
+                    value={orderInfo3}
+                    style={{
+                      borderRadius: "5px",
+                      width: "27%",
+                      border: "1px solid black",
+                      marginLeft: "3%",
+                    }}
+                    onChange={(e) => setOrderInfo3(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div
+                style={{
+                  marginBottom: "40px",
+                  fontFamily: "Monospace",
+                  fontSize: "16px",
+                }}
+              >
                 <label htmlFor="postDate">Data de Postagem:</label>
                 <input
                   type="date"
@@ -97,13 +173,15 @@ const Addcard = () => {
             </Botao>
             {showMessage && (
               <Alert
+                status="success"
                 style={{
-                  color: "green",
+                  display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  marginTop: "13px",
+                  marginTop: "28px",
+                  backgroundColor: "#F5DEB3",
+                  color: "green",
                 }}
-                status="success"
               >
                 <AlertIcon style={{ maxWidth: "17px" }} />
                 Card adicionado com sucesso!
@@ -112,46 +190,7 @@ const Addcard = () => {
           </Box>
         </Paper>
       </Container>
-=======
-      {/* <C.Container> */}
-      <h2>Adicionar Novo Card</h2>
-      <form>
-        <label htmlFor="name">Nome:</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <label htmlFor="description">Descrição:</label>
-        <textarea
-          id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-
-        <label htmlFor="postDate">Data de Postagem:</label>
-        <input
-          type="date"
-          id="postDate"
-          value={postDate}
-          onChange={(e) => setPostDate(e.target.value)}
-        />
-
-        <label htmlFor="location">Localização:</label>
-        <input
-          type="text"
-          id="location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-        />
-      </form>
-      <Button Text="Adicionar Card" onClick={handleAddCard}>
-        Adicionar Card
-      </Button>
-      {/* </C.Container> */}
->>>>>>> d6d11574103e7ac30d2f8d5e2b46b1ae6a23d47a
+      <Rodape />
     </>
   );
 };

@@ -4,6 +4,7 @@ export const cardStyle = {
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "colum",
+  border: "1px solid rgba(0, 0, 0, 0.2)",
 };
 
 export const imageStyle = {
