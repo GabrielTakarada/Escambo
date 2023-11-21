@@ -24,7 +24,7 @@ const Footer = () => {
           E-mail Addresses:
         </p>
       </div>
-      <div style={{ width: "20%" }}>
+      <div style={{ width: "20%", textAlign: "center" }}>
         <h3
           style={{
             display: "flex",
@@ -66,6 +66,7 @@ const Footer = () => {
         <div style={{ marginTop: "0.8%", marginBottom: "1%" }}>
           <p>Contact us: 55+ (16) 99340 - 0039 </p>
           <p>País da Cede: Brasil (BR)</p>
+
           <p>Copyright © 2023 Escambo</p>
         </div>
         <div style={{ width: "100%" }}>

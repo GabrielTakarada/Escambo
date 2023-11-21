@@ -37,12 +37,33 @@ export default function MediaCard() {
   useEffect(() => {
     // Inicialize o VanillaTilt no elemento do cartão
     VanillaTilt.init(cardRef.current, {
-      max: 15,
-      speed: 600,
+      max: -7,
+      speed: 800,
       glare: true,
-      "max-glare": 0.8,
+      "max-glare": 0.4,
     });
   }, []);
+
+  useEffect(() => {
+    const card = cardRef.current;
+
+    card.addEventListener("mousemove", (event) => {
+      const boundingBox = card.getBoundingClientRect();
+      const mouseX = event.clientX - boundingBox.left;
+      const mouseY = event.clientY - boundingBox.top;
+
+      const tiltX = (mouseX / boundingBox.width) * 2 - 1;
+      const tiltY = (mouseY / boundingBox.height) * 2 - 1;
+
+      card.style.boxShadow = `${-tiltX * 10}px ${
+        -tiltY * 10
+      }px 13px 4.5px #0003`;
+    });
+
+    card.addEventListener("mouseout", () => {
+      card.style.boxShadow = "none";
+    });
+  }, [isHovered]);
 
   return (
     <Card

@@ -4,7 +4,12 @@ export const cardStyle = {
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "colum",
-  border: "1px solid rgba(0, 0, 0, 0.2)",
+  border: "1.5px solid rgba(0, 0, 0, 0.2)",
+  ":hover": {
+    transform: "scale(1.2) translateZ(70px) perspective(1000px)",
+    zIndex: 2,
+    transformStyle: "preserve-3d",
+  },
 };
 
 export const imageStyle = {

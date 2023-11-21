@@ -10,7 +10,7 @@ const Main = () => {
     <div>
       <>
         <Navbar />
-        <div className="content-container" style={{ marginBottom: "3%" }}>
+        <div className="content-container" style={{ marginBottom: "4%" }}>
           <Container maxWhidth="false">
             <Grid container spacing={6} marginTop="2px">
               <Grid item xs={4}>
